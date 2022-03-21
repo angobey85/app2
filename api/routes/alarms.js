@@ -127,7 +127,7 @@ async function createAlarmRule(newAlarm) {
     const url = "http://"+process.env.EMQX_NODE_HOST+":8085/api/v4/rules";
 
     // topicExample = userid/did/temp  //msgExample = {value: 20}
-    const topic = "data/" + newAlarm.userNick + "/" + newAlarm.equipment_id + "/" + newAlarm.variable;
+    const topic = "data/" + newAlarm.equipment_id + "/" + newAlarm.variable + "/andesiot";
 
     const rawsql = "SELECT username, topic, payload FROM \"" + topic + "\" WHERE payload.value "  + newAlarm.condition + " " + newAlarm.value + " AND is_not_null(payload.value)";
 

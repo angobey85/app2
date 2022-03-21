@@ -281,7 +281,7 @@ async function createSaveRule(userId, userNick, equipment_id, status){
 
         const url = "http://"+process.env.EMQX_NODE_HOST+":8085/api/v4/rules"
 
-        const topic = "data/" + userNick + "/" + equipment_id + "/+";
+        const topic = "data/" + equipment_id + "/+/andesiot";
         const rawsql = 'SELECT topic, payload FROM \"' + topic + '\" WHERE payload.save=1';
         var newRule = {
             rawsql : rawsql,

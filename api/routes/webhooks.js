@@ -82,8 +82,8 @@ router.post("/saver-webhook", async (req, res) =>{
     console.log(data);
 
     const splittedTopic = data.topic.split("/");
-    const equipmentId = splittedTopic[2];
-    const variable = splittedTopic[3];
+    const equipmentId = splittedTopic[1];
+    const variable = splittedTopic[2];
 
     var result = await Equipment.find({equipment_id: equipmentId, equipment_user_id: data.userId})
 
@@ -165,7 +165,7 @@ router.post("/alarm-webhook", async (req, res) =>{
 
 
 function sendMqttNotif(notif){
-    const topic = 'notif/angobey85/dummy-did/dummy-var';
+    const topic = 'notif/'+ notif.notification_equipment_id +'/dummy-did/dummy-var';
     const msg = 'ADVERTENCIA LA VARIABLE: ' + notif.notification_variable_name + ' ES ' + notif.notification_condition + ' QUE ' + notif.notification_value;
     client.publish(topic, msg);
 }

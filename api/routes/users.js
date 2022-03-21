@@ -183,8 +183,8 @@ async function getWebUserMqtt(userId){
                 user_id: userId,
                 username: makeid(10),
                 password: makeid(10),
-                publish: ["+/" + userId + "/#"],
-                subscribe: ["+/" + userId + "/#"],
+                publish: ["+/+/+/andesiot"],
+                subscribe: ["+/+/+/andesiot"],
                 type: "user",  
                 date: Date.now(),
                 updateDate: Date.now()

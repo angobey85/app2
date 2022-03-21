@@ -35,11 +35,12 @@ export default {
             var widgetCopy = JSON.parse(JSON.stringify(widget));
             widgetCopy.selectedVariable.variable_id = this.$store.state.selectedEquipment.equipment_id;
             widgetCopy.selectedVariable.variable_name = this.$store.state.selectedEquipment.equipment_name;
-            widgetCopy.userId = this.$store.state.auth.userData.user_nick;
+            widgetCopy.selectedVariable.variable_nick = this.$store.state.auth.userData.user_nick;
+            widgetCopy.userId = this.$store.state.selectedEquipment.equipment_user_id;
 
 
             if (widget.widget == "numberchart") {
-                console.log("dasdsad")
+
 
                 widgetCopy.demo = false;
                 

@@ -20,6 +20,7 @@ app.use(cors());
 
 //RUTAS EXPRESS
 
+app.use('/api', require('./routes/plants.js'));
 app.use('/api', require('./routes/devices.js'));
 app.use('/api', require('./routes/users.js'));
 app.use('/api', require('./routes/variables.js'));

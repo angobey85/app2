@@ -200,8 +200,8 @@
       
         await this.getMqttCredentials();
 
-          const equipmentSubscribeTopic = "data/" + this.$store.state.auth.userData.user_nick + "/+/+";
-          const notifSubscribeTopic = "notif/" + this.$store.state.auth.userData.user_nick + "/+/+";
+          const equipmentSubscribeTopic = "data/+/+/andesiot";
+          const notifSubscribeTopic = "notif/+/+/andesiot";
 
           console.log(this.options.port)
 
@@ -234,6 +234,7 @@
                 console.log(equipmentSubscribeTopic)
               })
 
+              //NOTIF SUBSCRIPCION
               
               this.client.subscribe(notifSubscribeTopic, {qos:0}, (err) => {
                 if (err) {

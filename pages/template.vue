@@ -308,7 +308,8 @@ import { Select, Option } from "element-ui";
                     userId: "sampleuserid",
                     selectedVariable: {
                     variable_name: "Home",
-                    variable_id: "8888"
+                    variable_id: "8888",
+                    variable_nick: "ango"
                     },
                     variableFullName: "temperature",
                     variable: "varname",

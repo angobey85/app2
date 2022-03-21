@@ -115,7 +115,8 @@
                         this.value = 0;
                         this.chartOptions.series[0].data = [];
                         this.$nuxt.$off(this.topic, this.procesReceivedData);
-                        this.topic = 'data/' + this.config.userId + '/' + this.config.selectedVariable.variable_id + '/' + this.config.variable;
+                        this.topic = 'data/' + this.config.selectedVariable.variable_id + '/' + this.config.variable + '/andesiot';
+                        console.log("este es el topico " + this.topic);
                         this.$nuxt.$on(this.topic, this.procesReceivedData);
                         this.chartOptions.series[0].name = this.config.variableFullName + " " + this.config.unit;
                         this.getChartData();
